@@ -1,0 +1,74 @@
+name: Bug report
+description: Something fails against a WebDAV provider
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please redact credentials, personal hostnames and file contents.
+        Do not paste real app passwords or tokens.
+  - type: input
+    id: version
+    attributes:
+      label: anydav version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Runtime
+      options:
+        - Node.js
+        - Browser
+        - Electron
+        - React Native
+        - Flutter / Dart
+        - CLI
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Provider id
+      description: From `anydav providers`, for example `jianguoyun`, `nextcloud`, `alist`, `generic`.
+      placeholder: "jianguoyun"
+    validations:
+      required: true
+  - type: input
+    id: error
+    attributes:
+      label: Error code / HTTP status
+      description: "Example: UNAUTHORIZED 401, PRECONDITION_FAILED 412, NETWORK."
+      placeholder: "UNAUTHORIZED 401"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal code or CLI command, with credentials removed.
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted logs
+      description: `DavError.code`, `hint`, status, and any server response body. Never include credentials.
+      render: text
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I removed credentials, tokens and personal hostnames from this report.
+          required: true
+        - label: I searched existing issues for the same provider/error.
+          required: true

@@ -1,0 +1,80 @@
+{
+  "name": "anydav",
+  "version": "0.1.0",
+  "description": "Provider-aware WebDAV SDK for TypeScript: 31 provider presets, unified errors, and multi-device JSON sync.",
+  "keywords": [
+    "webdav",
+    "webdav-client",
+    "webdav-sdk",
+    "cloud-storage",
+    "provider-presets",
+    "sync",
+    "typescript",
+    "nutstore",
+    "jianguoyun",
+    "nextcloud",
+    "owncloud",
+    "synology",
+    "qnap",
+    "alist",
+    "pcloud",
+    "koofr"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./sync": {
+      "types": "./dist/src/sync.d.ts",
+      "import": "./dist/src/sync.js"
+    },
+    "./providers": {
+      "types": "./dist/src/providers.d.ts",
+      "import": "./dist/src/providers.js"
+    },
+    "./package.json": "./package.json",
+    "./providers.json": "./spec/providers.json"
+  },
+  "bin": {
+    "anydav": "./dist/src/cli.js"
+  },
+  "files": [
+    "dist/src",
+    "spec",
+    "docs",
+    "examples",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "gen": "node scripts/generate.mjs",
+    "build": "npm run gen && tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "test:only": "node --test dist/test/*.test.js",
+    "prepublishOnly": "npm run build",
+    "probe": "node scripts/probe-providers.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reign9201/anydav.git"
+  },
+  "homepage": "https://github.com/Reign9201/anydav#readme",
+  "bugs": {
+    "url": "https://github.com/Reign9201/anydav/issues"
+  },
+  "author": "Reign9201"
+}

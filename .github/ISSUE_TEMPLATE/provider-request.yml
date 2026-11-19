@@ -1,0 +1,83 @@
+name: Provider request
+description: Add or correct a WebDAV provider preset
+title: "[provider] "
+labels: ["provider"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A provider preset is only useful when the facts are right. Please include the official
+        documentation and say whether you actually tested an account.
+  - type: input
+    id: provider
+    attributes:
+      label: Provider name
+      placeholder: "Example Cloud"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - consumer
+        - nas
+        - self-hosted
+        - gateway
+        - generic
+    validations:
+      required: true
+  - type: input
+    id: endpoint
+    attributes:
+      label: WebDAV endpoint or URL template
+      description: Include placeholders such as `{host}` / `{username}` if the host is per-user.
+      placeholder: "https://dav.example.com/dav/"
+    validations:
+      required: true
+  - type: dropdown
+    id: auth
+    attributes:
+      label: Authentication / password kind
+      options:
+        - Basic + account password
+        - Basic + app password
+        - Basic + WebDAV password
+        - Basic + sub-account
+        - Bearer token
+        - Digest
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: docs
+    attributes:
+      label: Official documentation URL
+      placeholder: "https://help.example.com/webdav"
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Known limits or quirks
+      description: Upload size, PROPFIND entry cap, rate limits, special status codes, required paths, 2FA notes.
+  - type: dropdown
+    id: verification
+    attributes:
+      label: How was this verified?
+      options:
+        - I tested a real account (round-trip)
+        - I probed the endpoint (OPTIONS / PROPFIND)
+        - Official documentation only
+        - Community knowledge
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I did not include credentials or personal hostnames.
+          required: true
+        - label: I checked whether the provider already exists in `spec/providers.json`.
+          required: true

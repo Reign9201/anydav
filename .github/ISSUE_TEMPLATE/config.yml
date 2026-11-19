@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Provider matrix and verification status
+    url: https://github.com/Reign9201/anydav/blob/main/docs/providers.md
+    about: Check whether the provider is already supported before opening a request.
+  - name: Integration and sync guides
+    url: https://github.com/Reign9201/anydav/tree/main/docs
+    about: Browser proxies, Flutter integration and multi-device sync recipes.
+  - name: Security report
+    url: https://github.com/Reign9201/anydav/security/advisories/new
+    about: Report vulnerabilities privately, not in a public issue.
