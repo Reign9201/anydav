@@ -5,11 +5,23 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # TypeScript 7 is a major upgrade; adopt it deliberately after downstream
+      # apps have moved, not automatically.
+      - dependency-name: typescript
+        versions: [">=6.0.0"]
 
   - package-ecosystem: pub
     directory: /dart
     schedule:
       interval: weekly
+    ignore:
+      # Flutter 3.38 ships Dart 3.10, while xml 7 and test 1.32 require a newer
+      # SDK. Keep the path dependency usable by downstream Flutter apps.
+      - dependency-name: xml
+        versions: [">=7.0.0"]
+      - dependency-name: test
+        versions: [">=1.32.0"]
 
   - package-ecosystem: github-actions
     directory: /
