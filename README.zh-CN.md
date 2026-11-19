@@ -46,8 +46,10 @@
 # 本仓库内开发：
 npm install && npm run build
 
-# 其他本地项目用路径安装（发布到 npm 后可改成包名）：
-npm install ../anydav
+# 其他项目从 GitHub 安装（发布到 npm 后可改成 npm install anydav）：
+npm install github:Reign9201/anydav
+# 或 v0.1.0 release tarball
+npm install https://github.com/Reign9201/anydav/releases/download/v0.1.0/anydav-0.1.0.tgz
 ```
 
 ```ts
@@ -123,7 +125,17 @@ console.log(result.uploaded, result.downloaded, result.devices);
 
 ## 快速开始（Dart / Flutter）
 
-在应用的 `pubspec.yaml` 里用路径依赖接入本仓库（后续可发布到私有 pub）：
+在应用的 `pubspec.yaml` 里用 Git 依赖接入（首次发布到 pub.dev 后可改成 `anydav: ^0.1.0`）：
+
+```yaml
+dependencies:
+  anydav:
+    git:
+      url: https://github.com/Reign9201/anydav.git
+      path: dart
+```
+
+本地开发时也可以使用路径依赖：
 
 ```yaml
 dependencies:

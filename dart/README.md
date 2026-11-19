@@ -9,12 +9,24 @@ Yandex Disk、PikPak、飞牛、极空间、rclone 等。
 
 ## 安装
 
+首次发布到 pub.dev 之前，使用 Git 依赖：
+
+```yaml
+dependencies:
+  anydav:
+    git:
+      url: https://github.com/Reign9201/anydav.git
+      path: dart
+```
+
+发布到 pub.dev 后：
+
 ```yaml
 dependencies:
   anydav: ^0.1.0
 ```
 
-在首次发布到 pub.dev 之前，也可以使用路径依赖：
+本地开发时也可以使用路径依赖：
 
 ```yaml
 dependencies:
