@@ -46,10 +46,11 @@
 # 本仓库内开发：
 npm install && npm run build
 
-# 其他项目从 GitHub 安装（发布到 npm 后可改成 npm install anydav）：
+# 从 npm 安装：
+npm install anydav
+
+# 或从 GitHub 安装：
 npm install github:Reign9201/anydav
-# 或 v0.1.0 release tarball
-npm install https://github.com/Reign9201/anydav/releases/download/v0.1.0/anydav-0.1.0.tgz
 ```
 
 ```ts

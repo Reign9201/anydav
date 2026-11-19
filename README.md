@@ -1,6 +1,7 @@
 # anydav
 
 [![CI](https://github.com/Reign9201/anydav/actions/workflows/ci.yml/badge.svg)](https://github.com/Reign9201/anydav/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/anydav.svg)](https://www.npmjs.com/package/anydav)
 [![GitHub release](https://img.shields.io/github/v/release/Reign9201/anydav.svg)](https://github.com/Reign9201/anydav/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -39,18 +40,16 @@ Moving an app from Nutstore/Jianguoyun to Nextcloud, Synology, AList or pCloud i
 
 ### TypeScript / JavaScript
 
-Until the first npm release, install from GitHub:
+```bash
+npm install anydav
+```
+
+GitHub fallback:
 
 ```bash
 npm install github:Reign9201/anydav
 # or the v0.1.0 release tarball
 npm install https://github.com/Reign9201/anydav/releases/download/v0.1.0/anydav-0.1.0.tgz
-```
-
-Once published to npm:
-
-```bash
-npm install anydav
 ```
 
 Node 18+, browsers, Electron, React Native, Deno and Bun.
